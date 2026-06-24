@@ -1,0 +1,212 @@
+{set:effect|{arg:0}}
+{set:start|{unix}}
+{if:{get:effect}|=|custom|then:{set:code|{eval:{arg:1}}}}
+{if:{get:effect}|=|original|then:{set:code|speed # 1}}
+{if:{get:effect}|=|reversed|then:{set:code|reverse # 1}}
+{if:{get:effect}|=|g major|then:{set:code|
+invert #
+copy # #1
+copy #1 #2
+audiopitch #2 2
+copy #1 #3
+audiopitch #3 0.5
+copy #1 #4
+audiopitch #4 2**(7/12)
+copy #1 #5
+audiopitch #5 2**(4/12)
+copy #1 #6
+audiopitch #6 2**(-5/12)
+audioputmix #1 #2
+volume #1 2
+audioputmix #1 #3
+volume #1 2
+audioputmix #1 #4
+volume #1 2
+audioputmix #1 #5
+volume #1 2
+audioputmix #1 #6
+volume #1 2
+audioputreplace # #1
+}}
+{if:{get:effect}|=|g major 1|then:{set:code|
+invert #
+hueshifthsv # 180
+copy # #1
+audiopitch #1 2**(8/12)
+audioputreplace # #1
+}}
+{if:{get:effect}|=|mari group|then:{set:code|
+hueshifthsv # 42
+copy # #1
+audiopitch #1 2**(1/12)
+audioputreplace # #1
+}}
+{if:{get:effect}|=|luig group|then:{set:code|
+hueshifthsv # -42
+copy # #1
+audiopitch #1 2**(-1/12)
+audioputreplace # #1
+}}
+{if:{get:effect}|=|g major 4|then:{set:code|
+huecurvergba # all 0 0.5 1 0.5 0
+copy # #1
+copy #1 #2
+audiopitch #2 2**(5/12)
+audioputmix #1 #2
+volume #1 2
+audioputreplace # #1
+}}
+{if:{get:effect}|=|i killed x|then:{set:code|
+hueshifthsv # -120
+explode # 0.842
+copy # #1
+audiopitch #1 2**(-8/12)
+audioputreplace # #1
+}}
+{if:{get:effect}|=|confusion|then:{set:code|
+contrast # -1
+haah #
+copy # #1
+audioreverse #1
+audioputreplace # #1
+}}
+{if:{get:effect}|=|g major 7|then:{set:code|
+invert #
+copy # #1
+copy #1 #2
+audiopitch #2 2**(3/12)
+audioputmix #1 #2
+volume #1 2
+audioputreplace # #1
+}}
+{if:{get:effect}|=|g major 16|then:{set:code|
+invert #
+hueshifthsv # 230
+flop #
+copy # #1
+copy #1 #2
+audiopitch #2 2**(-3/12)
+audioputmix #1 #2
+volume #1 2
+audioputreplace # #1
+}}
+{if:{get:effect}|=|does respond|then:{set:code|
+hueshifthsv # -50
+swirl # -47
+copy # #1
+copy #1 #2
+audiopitch #2 2**(-12/12)
+audioputmix #1 #2
+volume #1 2
+audioputreplace # #1
+}}
+{if:{get:effect}|=|does not respond|then:{set:code|
+hueshifthsv # 50
+swirl # 47
+copy # #1
+copy #1 #2
+audiopitch #2 2**(12/12)
+audioputmix #1 #2
+volume #1 2
+audioputreplace # #1
+}}
+{if:{get:effect}|=|g major 51|then:{set:code|
+get # width #w
+get # height #h
+invert #
+flop #
+hueshifthsv # 130
+rotate # 90
+waves # 17.72 100 2
+rotate # 270
+cover # #w #h
+waves # 17.72 100 2
+cover # #w #h
+copy # #1
+copy #1 #2
+audiopitch #2 2**(-5/12)
+audioputmix #1 #2
+volume #1 2
+audioputreplace # #1
+}}{if:{get:effect}|=|91 dxi|then:{set:code|
+invert #
+hueshifthsv # 75 100
+shake # 0 4 true
+copy # #1
+copy #1 #2
+audiopitch #2 2**(-3.5/12)
+audioputmix #1 #2
+volume #1 2
+audioputreplace # #1
+}}{if:{get:effect}|=|g major 100|then:{set:code|
+copy # #1
+crop # #w/2 #h 0 0
+flop #1
+crop #1 #1w/2 #1h #1w/2 0
+hueshifthsv # -50
+hueshifthsv #1 180
+audiopitch # 2**(-1/12)
+audiopitch #1 2**(-5/12)
+join # #1 false
+volume # 2
+}}{if:{get:effect}|=|early g major|then:{set:code|
+copy # #1
+copy #1 #2
+audiopitch #2 2
+copy #1 #3
+audiopitch #3 0.5
+copy #1 #4
+audiopitch #4 2**(7/12)
+copy #1 #5
+audiopitch #5 2**(4/12)
+copy #1 #6
+audiopitch #6 2**(-5/12)
+copy #1 #7
+audiopitch #7 2**(-8/12)
+audioputmix #1 #2
+volume #1 2
+audioputmix #1 #3
+volume #1 2
+audioputmix #1 #4
+volume #1 2
+audioputmix #1 #5
+volume #1 2
+audioputmix #1 #6
+volume #1 2
+audioputmix #1 #7
+volume #1 2
+audioputreplace # #1
+}}{if:{get:effect}|=|half luig group|then:{set:code|
+hueshifthsv # -23.5
+audiopitch # 2**(-0.5/12)
+}}{if:{get:effect}|=|half mari group|then:{set:code|
+hueshifthsv # 23.5
+audiopitch # 2**(0.5/12)
+}}
+-# NOTE: yellowgreenfx is on BETA, may have bugs
+-# took {math:({unix}-{get:start})/1000} seconds
+{choose:i love cats|Tag returned no content|steamed hams|are you purple|g major {choose: |{range:-10000|10000}}|kek|🦅🦅🦅|am i a joke|hey i feel so s- SHUT THE F##K UP|yellowgreengmd_gd is 0|oh my goddess|by the way, try .t {tagname} custom "reverse #" raw}
+{if:{arg:{if:{get:effect}|=|custom|then:2|else:1}}|=|raw|then:
+oh... you want the raw of {get:effect}? it is here!
+{code:{get:code}}
+{if:{get:effect}|=|custom|then:-# btw the raw is yours}
+|else:{eval:{iscript:
+load {media} m
+{replace:#|with:m|in:{get:code}}
+{if:{arg:{if:{get:effect}|=|custom|then:2|else:1}}|=|sync|then:
+get m duration d
+copy m audio
+convert audio audio/mp3
+get audio duration audiod
+speed m d/audiod
+audioputreplace m audio
+}{if:{arg{if:{get:effect}|=|custom|then:2|else:1}}|=|syncalt|then:
+get m duration d
+copy m audio
+convert audio audio/mp3
+get audio duration audiod
+speed audio d/audiod
+audioputreplace m audio
+}
+render m default yellowgreenfx
+}}}

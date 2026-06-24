@@ -252,7 +252,15 @@ convert audio audio/mp3
 get audio duration audiod
 speed audio d/audiod
 audioputreplace m audio
+}{if:{arg{if:{get:effect}|=|custom|then:2|else:1}}|=|split|then:
+load {media} original
+get original width w
+get original height h
+join original m {if:{arg:{if:{get:effect}|=|custom|then:3|else:2}}|=|true|then:true|else:false}
+{if:{arg:{if:{get:effect}|=|custom|then:4|else:3}}|=|true|then:
+resize original w h
 }
-render m default yellowgreenfx
+}
+render {if:{arg{if:{get:effect}|=|custom|then:2|else:1}}|=|join|then:original|else:m} default yellowgreenfx
 }}}
 -# took {math:({unix}-{get:start})/1000} seconds

@@ -257,7 +257,8 @@ audioputreplace # #1
 }}{if:{get:effect}|=|g minor|then:{set:code|
 invert #
 hueshifthsv # 180
-hueshifthsvffmpeg # 180
+contrast # -1
+invert #
 copy # #1
 copy #1 #2
 audiopitch #2 0.5

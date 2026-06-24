@@ -282,10 +282,10 @@ audioputreplace # #1
 get # width w
 get # height h
 get # duration d
-wiggle # left 11 4
-wiggle # right 11 4
-wiggle # up 11 4
-wiggle # down 11 4
+wiggle # left 1 4
+wiggle # right 1 4
+wiggle # up 1 4
+wiggle # down 1 4
 audiopitch # 2**(-24/12)
 audiopitch # 2**(12/12)
 audiopitch # 2**(12/12)

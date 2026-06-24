@@ -278,6 +278,26 @@ volume #1 2
 audioputmix #1 #6
 volume #1 2
 audioputreplace # #1
+}}{if:{get:effect}|=|nameless 2.0|then:{set:code|
+get # width w
+get # height h
+get # duration d
+wiggle # left 11 4
+wiggle # right 11 4
+wiggle # up 11 4
+wiggle # down 11 4
+audiopitch # 2**(-24/12)
+audiopitch # 2**(12/12)
+audiopitch # 2**(12/12)
+volume # 1.5
+audiopitch # 2**(-24/12)
+audiopitch # 2**(12/12)
+audiopitch # 2**(12/12)
+volume # 1.5
+copy # a
+convert a audio/mp3
+repeatduration a d
+audioputreplace # a
 }}
 -# NOTE: yellowgreenfx is on BETA, may have bugs
 {choose:i love cats|Tag returned no content|steamed hams|are you purple|g major {choose: |{range:-10000|10000}}|kek|🦅🦅🦅|am i a joke|hey i feel so s- SHUT THE F##K UP|yellowgreengmd_gd is 0|oh my goddess|by the way, try .t {tagname} custom "reverse #" raw|i want you crying for me{newline}i want you{newline}i want you{newline}WAWAWAWAWAWAWAWAAAA-}

@@ -218,6 +218,16 @@ swaprgba # grba
 copy # #1
 audiopitch #1 2**(-12/12)
 audioputreplace # #1
+}}{if:{get:effect}|=|mikes g major 36|then:{set:code|
+hueshifthsv # 47
+haah #
+copy # #1
+copy #1 #2
+audiopitch #1 2**(7/12)
+audiopitch #2 2**(-5/12)
+audioputmix #1 #2
+volume #1 2
+audioputreplace # #1
 }}
 -# NOTE: yellowgreenfx is on BETA, may have bugs
 {choose:i love cats|Tag returned no content|steamed hams|are you purple|g major {choose: |{range:-10000|10000}}|kek|🦅🦅🦅|am i a joke|hey i feel so s- SHUT THE F##K UP|yellowgreengmd_gd is 0|oh my goddess|by the way, try .t {tagname} custom "reverse #" raw|i want you crying for me{newline}i want you{newline}i want you{newline}WAWAWAWAWAWAWAWAAAA-}

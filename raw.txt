@@ -332,8 +332,11 @@ volume #1 2
 audioputreplace # #1
 }}{if:{get:effect}|=|g major 200|then:{set:code|
 haah #
+get # width w
+get # height h
 wave # #h/12 #w/2.1
-hueshifthsv # 48
+cover # w h
+hueshifthsv # 52
 copy # #1
 copy #1 #2
 audiopitch #2 2**(-3/12)

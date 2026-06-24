@@ -331,8 +331,9 @@ audioputmix #1 #3
 volume #1 2
 audioputreplace # #1
 }}{if:{get:effect}|=|g major 200|then:{set:code|
-get # width w
-get # height h
+load {media} wdwn
+get wdwn width w
+get wdwn height h
 haah #
 wave # #h/12 #w/2.1
 cover # w h

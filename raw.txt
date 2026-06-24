@@ -182,6 +182,12 @@ audiopitch # 2**(-0.5/12)
 }}{if:{get:effect}|=|half mari group|then:{set:code|
 hueshifthsv # 23.5
 audiopitch # 2**(0.5/12)
+}}{if:{get:effect}|=|quarter luig group|then:{set:code|
+hueshifthsv # -11.75
+audiopitch # 2**(-0.25/12)
+}}{if:{get:effect}|=|quarter mari group|then:{set:code|
+hueshifthsv # 11.75
+audiopitch # 2**(0.25/12)
 }}
 -# NOTE: yellowgreenfx is on BETA, may have bugs
 {choose:i love cats|Tag returned no content|steamed hams|are you purple|g major {choose: |{range:-10000|10000}}|kek|🦅🦅🦅|am i a joke|hey i feel so s- SHUT THE F##K UP|yellowgreengmd_gd is 0|oh my goddess|by the way, try .t {tagname} custom "reverse #" raw}

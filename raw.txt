@@ -256,7 +256,6 @@ volume #1 2
 audioputreplace # #1
 }}{if:{get:effect}|=|g minor|then:{set:code|
 hueshifthsv # 180
-contrast # -1
 copy # #1
 copy #1 #2
 audiopitch #2 0.5

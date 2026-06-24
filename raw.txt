@@ -188,9 +188,29 @@ audiopitch # 2**(-0.25/12)
 }}{if:{get:effect}|=|quarter mari group|then:{set:code|
 hueshifthsv # 11.75
 audiopitch # 2**(0.25/12)
+}}{if:{get:effect}|=|opposite respond|then:{set:code|
+hueshifthsv # -50
+swirl # 47
+copy # #1
+copy #1 #2
+audiopitch #2 2**(-12/12)
+audioputmix #1 #2
+volume #1 2
+audiopitch #1 2**(-12/12)
+audioputreplace # #1
+}}{if:{get:effect}|=|opposite not respond|then:{set:code|
+hueshifthsv # 50
+swirl # -47
+copy # #1
+copy #1 #2
+audiopitch #2 2**(12/12)
+audioputmix #1 #2
+volume #1 2
+audiopitch #1 2**(12/12)
+audioputreplace # #1
 }}
 -# NOTE: yellowgreenfx is on BETA, may have bugs
-{choose:i love cats|Tag returned no content|steamed hams|are you purple|g major {choose: |{range:-10000|10000}}|kek|🦅🦅🦅|am i a joke|hey i feel so s- SHUT THE F##K UP|yellowgreengmd_gd is 0|oh my goddess|by the way, try .t {tagname} custom "reverse #" raw}
+{choose:i love cats|Tag returned no content|steamed hams|are you purple|g major {choose: |{range:-10000|10000}}|kek|🦅🦅🦅|am i a joke|hey i feel so s- SHUT THE F##K UP|yellowgreengmd_gd is 0|oh my goddess|by the way, try .t {tagname} custom "reverse #" raw|i want you crying for me{newline}i want you{newline}i want you{newline}WAWAWAWAWAWAWAWAAAA-}
 {if:{arg:{if:{get:effect}|=|custom|then:2|else:1}}|=|raw|then:
 oh... you want the raw of {get:effect}? it is here!
 {code:{get:code}}

@@ -372,7 +372,7 @@ convert audio audio/mp3
 get audio duration audiod
 speed audio d/audiod
 audioputreplace m audio
-}{if:{arg:{if:{get:effect}|=|custom|then:2|else:1}}|=|withstats|then:
+}
 get m width w
 get m height h
 get m framecount fc
@@ -381,7 +381,6 @@ export w
 export h
 export fc
 export d
-}
 render m default yellowgreenfx
 }}}
 {if:{arg:{if:{get:effect}|=|custom|then:2|else:1}}|=|withstats|then:

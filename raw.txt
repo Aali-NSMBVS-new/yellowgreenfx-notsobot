@@ -352,7 +352,7 @@ audioputreplace # #1
 load {media} wdwn
 get wdwn width w
 get wdwn height h
-waaw
+waaw #
 wave # -#h/12 -#w/2.1
 cover # w h
 hueshifthsv # -52

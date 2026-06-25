@@ -348,23 +348,11 @@ volume #1 2
 audioputmix #1 #3
 volume #1 2
 audioputreplace # #1
-}}{if:{get:effect}|=|g minor 200|then:{set:code|
-load {media} wdwn
-get wdwn width w
-get wdwn height h
-waaw #
-wave # -#h/12 -#w/2.1
-cover # w h
-hueshifthsv # -52
+}}{if:{get:effect}|=|i revived x|then:{set:code|
+hueshifthsv # 120
+implode # 0.542
 copy # #1
-copy #1 #2
-audiopitch #2 2**(3/12)
-copy #1 #3
-audiopitch #3 2**(7/12)
-audioputmix #1 #2
-volume #1 2
-audioputmix #1 #3
-volume #1 2
+audiopitch #1 2**(8/12)
 audioputreplace # #1
 }}
 -# NOTE: yellowgreenfx is on BETA, may have bugs

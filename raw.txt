@@ -357,6 +357,9 @@ audioputreplace # #1
 }}
 -# NOTE: yellowgreenfx is on BETA, may have bugs
 {choose:i love cats|Tag returned no content|steamed hams|are you purple|g {choose:major|minor|dorian} {choose: |{range:-10000|10000}}|kek|🦅🦅🦅|am i a joke|hey i feel so s- SHUT THE F##K UP|yellowgreengmd_gd is 0|oh my goddess|by the way, try .t {tagname} custom "reverse #" raw|i want you crying for me{newline}i want you{newline}i want you{newline}WAWAWAWAWAWAWAWAAAA-|i would eat a hawk tuah|https://discord.com/oauth2/authorize?client_id=1518912803711483975&permissions=8&integration_type=0&scope=applications.commands+bot|try hollyvideo, jikervideo, zenithvideo, notsofx and tftotvideo too :D|Job took longer than 45 seconds|piped: h -> i}
+{if:{arg:{if:{get:effect}|=|custom|then:2|else:1}}|=|raw|then:RAW OF {upper:{get:effect}}!
+{code:{get:code}}
+|else:
 {eval:{iscript:
 load {media} m
 {replace:#|with:m|in:{get:code}}
@@ -383,15 +386,8 @@ export w
 export h
 export fc
 export d
+render m default yellowgreenfx
 }}
-{if:{arg:{if:{get:effect}|=|custom|then:2|else:1}}|=|withstats|then:
-{code:
-stats:
-size (width x height): {get:w} x {get:h}
-  width: {get:w}
-  height: {get:h}
-frame count: {get:fc}
-duration: {get:d}
 }
-}
+
 -# took {math:({unix}-{get:start})/1000} seconds

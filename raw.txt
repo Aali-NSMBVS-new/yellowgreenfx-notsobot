@@ -382,7 +382,6 @@ export h
 export fc
 export d
 }
-}
 render m default yellowgreenfx
 }}}
 {if:{arg:{if:{get:effect}|=|custom|then:2|else:1}}|=|withstats|then:

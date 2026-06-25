@@ -350,6 +350,7 @@ volume #1 2
 audioputreplace # #1
 }}{if:{get:effect}|=|loudness|then:{set:code|
 grayscale #
+invert #
 huecurvergba # red 0,0 0.5,0.5 1,1
 huecurvergba # green 0,0 0.5,0.25 0,0
 huecurvergba # blue 0 0.5,0 1,0

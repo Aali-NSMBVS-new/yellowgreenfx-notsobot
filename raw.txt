@@ -385,6 +385,24 @@ volume #1 2
 audioputmix #1 #5
 volume #1 2
 audioputreplace # #1
+}}{if:{get:effect}|=|new g major 100|then:{set:code|
+swaprgba # bgra
+hueshifthsvffmpeg # 95.7
+haah #
+load {media} wdwn
+get wdwn width w
+get wdwn height h
+rotate # 90
+wave # w/16 w/3.6
+rotate # -90
+cover # w h
+wave # -h/24 w/2
+cover # w h
+copy # #1
+audiopitch # 2**(-1/12)
+audiopitch #1 2**(-5/12)
+audioputmix # #1
+volume # 2
 }}
 -# NOTE: yellowgreenfx is on BETA, may have bugs
 {choose:i love cats|Tag returned no content|steamed hams|are you purple|g {choose:major|minor|dorian} {choose: |{range:-10000|10000}}|kek|🦅🦅🦅|am i a joke|hey i feel so s- SHUT THE F##K UP|yellowgreengmd_gd is 0|oh my goddess|by the way, try .t {tagname} custom "reverse #" raw|i want you crying for me{newline}i want you{newline}i want you{newline}WAWAWAWAWAWAWAWAAAA-|i would eat a hawk tuah|https://discord.com/oauth2/authorize?client_id=1518912803711483975&permissions=8&integration_type=0&scope=applications.commands+bot|try hollyvideo, jikervideo, zenithvideo, notsofx and tftotvideo too :D|Job took longer than 45 seconds|piped: h -> i}

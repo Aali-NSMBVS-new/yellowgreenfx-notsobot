@@ -375,7 +375,7 @@ audiopitch #3 0.5
 copy #1 #4
 audiopitch #4 2**(-7/12)
 copy #1 #5
-audiopitch #6 2**(3/12)
+audiopitch #5 2**(3/12)
 audioputmix #1 #2
 volume #1 2
 audioputmix #1 #3

@@ -415,27 +415,22 @@ audioputreplace # #1
 }}
 -# NOTE: yellowgreenfx is on BETA, may have bugs
 {choose:i love cats|Tag returned no content|steamed hams|are you purple|g {choose:major|minor|dorian} {choose: |{range:-10000|10000}}|kek|🦅🦅🦅|am i a joke|hey i feel so s- SHUT THE F##K UP|yellowgreengmd_gd is 0|oh my goddess|by the way, try .t {tagname} custom "reverse #" raw|i want you crying for me{newline}i want you{newline}i want you{newline}WAWAWAWAWAWAWAWAAAA-|i would eat a hawk tuah|https://discord.com/oauth2/authorize?client_id=1518912803711483975&permissions=8&integration_type=0&scope=applications.commands+bot|try hollyvideo, jikervideo, zenithvideo, notsofx and tftotvideo too :D|Job took longer than 45 seconds|piped: h -> i|[_._tdc_._]: Yeah, your g major 100 kinda sucks ngl|I HOST THIS ALL ON GITHUB HELPPPP}
-{if:{arg:{if:{get:effect}|=|custom|then:2|else:1}}|=|raw|then:RAW OF {upper:{get:effect}}!
-{code:{get:code}}
-|else:
-{if:{arg:1}|=|ihtx|then:{eval:{iscript:
-load {media} 1
-snip 1 0 {arg:3}
-{replace:#|with:1|in:{get:code}}
-{foreach:{arg:2}|
-copy {math:{get:idx}+1} {math:{get:idx}+2}
-{replace:#|with:{math:{get:idx}+2|in:{get:code}}
-}
-{foreach:{math:{arg:2}-1}|
-concat 1 {math:{get:idx}+2}
-}
-render 1 default yellowgreenfx
-|else:
-{eval:{iscript:
+{if:{arg:1}|!=|ihtx|then:{set:index|0}{eval:{iscript:
 load {media} m
 {replace:#|with:m|in:{get:code}}
 render m default yellowgreenfx
-}}}}}
+}}|else:{eval:{iscript:
+load {media} 0
+{replace:#|with:0|in:{get:code}}
+snip 0 0 {arg:3}
+{foreach:{math:{arg:2}-1}|
+copy {get:index} {math:{get:index}+1}
+{replace:#|with:{math:{get:index}+1}|in:{get:code}}
+concat 0 {math:{get:index}+1}
+{set:index|{math:{get:index}+1}}
+}
+render 0 default yellowgreenfx
+}}}
 
 
 -# took {math:({unix}-{get:start})/1000} seconds

@@ -418,34 +418,24 @@ audioputreplace # #1
 {if:{arg:{if:{get:effect}|=|custom|then:2|else:1}}|=|raw|then:RAW OF {upper:{get:effect}}!
 {code:{get:code}}
 |else:
+{if:{arg:1}|=|ihtx|then:{eval:{iscript:
+load {media} 1
+snip 1 0 {arg:3}
+{replace:#|with:1|in:{get:code}}
+{foreach:{arg:2}|
+copy {math:{get:idx}+1} {math:{get:idx}+2}
+{replace:#|with:{math:{get:idx}+2|in:{get:code}}
+}
+{foreach:{math:{arg:2}-1}|
+concat 1 {math:{get:idx}+2}
+}
+render 1 default yellowgreenfx
+|else:
 {eval:{iscript:
 load {media} m
 {replace:#|with:m|in:{get:code}}
-{if:{arg:{if:{get:effect}|=|custom|then:2|else:1}}|=|sync|then:
-get m duration d
-copy m audio
-convert audio audio/mp3
-get audio duration audiod
-speed m d/audiod
-audioputreplace m audio
-}{if:{arg{if:{get:effect}|=|custom|then:2|else:1}}|=|syncalt|then:
-get m duration d
-copy m audio
-convert audio audio/mp3
-get audio duration audiod
-speed audio d/audiod
-audioputreplace m audio
-}
-get m width w
-get m height h
-get m framecount fc
-get m duration d
-export w
-export h
-export fc
-export d
 render m default yellowgreenfx
-}}
-}
+}}}}
+
 
 -# took {math:({unix}-{get:start})/1000} seconds

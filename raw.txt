@@ -444,10 +444,10 @@ load {media} wdwn
 get wdwn width w
 get wdwn height h
 rotate # 90
-wave # h/7.5 w/3.5
+wave # h/7.9 w/3.5
 rotate # -90
 cover # w h
-wave # -h/12.1 w/2.2
+wave # -h/12 w/2.2
 cover # w h
 hueshifthsv # -75
 invert #

@@ -466,7 +466,7 @@ load {media} m
 {replace:#|with:m|in:{get:code}}
 render m default yellowgreenfx
 }
-{set:seconds|{math:({unix}-{set:start})/1000}}
+{set:seconds|{math:({unix}-{get:start})/1000}}
 {embedjson:{
   "title": "ok. media processed. freed- JUST DISPLAY THE STATS PLEASE",
   "fields": [

@@ -462,12 +462,7 @@ audioputmix #1 #3
 volume #1 2
 audioputreplace # #1
 }}
-{iscript:
-load {media} m
-{replace:#|with:m|in:{get:code}}
-render m default yellowgreenfx
-}
-{set:raw_embed|{embedjson:{"title":"raw for {get:effect}","description":"{get:desc}","author":{"name":"{user}","icon_url":"{avatar}"},"footer":{"text":"yellowgreenfx","icon_url":"https://cdn.discordapp.com/attachments/1514193972850069564/1520997627674492958/1_3_1.png?ex=6a433aed&is=6a41e96d&hm=ee7321b76d6824331c6d80734ace9997f79ddd2f3b9696dcd3afdac0eab93c95&"},"color":5460992}}}
+{set:raw_embed|{embedjson:{"title":"raw for {get:effect}","description":"{code:{get:code}}","author":{"name":"{user}","icon_url":"{avatar}"},"footer":{"text":"yellowgreenfx","icon_url":"https://cdn.discordapp.com/attachments/1514193972850069564/1520997627674492958/1_3_1.png?ex=6a433aed&is=6a41e96d&hm=ee7321b76d6824331c6d80734ace9997f79ddd2f3b9696dcd3afdac0eab93c95&"},"color":5460992}}}
 {if:{arg:{if:{get:effect}|=|custom|then:2|else:1}}|=|raw|then:{eval:{get:raw_embed}}|else:{eval:{iscript:
 load {media} m
 {replace:#|with:m|in:{get:code}}

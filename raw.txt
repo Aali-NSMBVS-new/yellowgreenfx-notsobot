@@ -446,9 +446,9 @@ get wdwn height h
 rotate # 90
 wave # h/7.5 w/3.5
 rotate # -90
-cover # 0w 0h
+cover # w h
 wave # -h/12.1 w/2.2
-cover # 0w 0h
+cover # w h
 hueshifthsv # -75
 invert #
 copy # #1

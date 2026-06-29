@@ -467,4 +467,27 @@ load {media} m
 render m default yellowgreenfx
 }
 {set:seconds|{math:({unix}-{set:start})/1000}}
-{embedjson:{"title":"ok. media proccessed. freed- JUST DISPLAY THE STATS PLEASE","fields":[{"name":"took seconds:", "value":"{get:seconds}", "inline":true},{"name":"used by", "value":"{user}", "inline":true}],"author":{"name":"{user}","icon_url":"{avatar}"},"footer":{"text":"yellowgreenfx","icon_url":"https://cdn.discordapp.com/attachments/1514193972850069564/1520997627674492958/1_3_1.png?ex=6a433aed&is=6a41e96d&hm=ee7321b76d6824331c6d80734ace9997f79ddd2f3b9696dcd3afdac0eab93c95&"},"color":5460992}}
+{embedjson:{
+  "title": "ok. media processed. freed- JUST DISPLAY THE STATS PLEASE",
+  "fields": [
+    {
+      "name": "took seconds:",
+      "value": "{get:seconds}",
+      "inline": true
+    },
+    {
+      "name": "used by",
+      "value": "{user}",
+      "inline": true
+    }
+  ],
+  "author": {
+    "name": "{user}",
+    "icon_url": "{avatar}"
+  },
+  "footer": {
+    "text": "yellowgreenfx",
+    "icon_url": "https://cdn.discordapp.com/attachments/1514193972850069564/1520997627674492958/1_3_1.png?ex=6a433aed&is=6a41e96d&hm=ee7321b76d6824331c6d80734ace9997f79ddd2f3b9696dcd3afdac0eab93c95&"
+  },
+  "color": 5460992
+}}

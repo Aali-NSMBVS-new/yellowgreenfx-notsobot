@@ -473,6 +473,25 @@ copy # #1
 audiopitch #1 2**(-2.5/12)
 volume #1 1.07
 audioputreplace # #1
+}}{if:{get:effect}|=|g major 400|then:{set:code|
+get wdwn width w
+get wdwn height h
+waves # 1 10 3
+waves # 3 30 3
+waves # 5 50 3
+waves # 7 70 3
+waves # 9 90 3
+cover # w h
+resize # w*1.9 h*1.9
+swaprgba # bgra
+hueshifthsv # 106.56
+copy # #1
+copy #1 #2
+audiopitch #1 2**(1/12)
+audiopitch #2 2**(-5/12)
+audioputmix #1 #2
+volume #1 2
+audioputreplace # #1
 }}
 {if:{get:subcommand}|=|raw|then:{code:{get:code}}{newline}-# raw of {get:effect}{newline}-# free 2 copy
 |else:

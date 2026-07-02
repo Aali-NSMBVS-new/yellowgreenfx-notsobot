@@ -482,7 +482,7 @@ waves # 5 50 3
 waves # 7 70 3
 waves # 9 90 3
 cover # w h
-resize # w*1.9 h*1.9
+cover # w/1.87 h/1.87
 swaprgba # bgra
 hueshifthsv # 106.56
 copy # #1

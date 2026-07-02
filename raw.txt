@@ -528,7 +528,9 @@ audioputmix #1 #2
 volume #1 2
 audioputreplace # #1
 }}{if:{get:effect}|=|win12knowns g major 74|then:{set:code|
-hueshifthsv # 20
+contrast # -1
+hueshifthsvffmpeg # 30
+contrast # -1
 explode # 0.43
 copy # #1
 copy #1 #2

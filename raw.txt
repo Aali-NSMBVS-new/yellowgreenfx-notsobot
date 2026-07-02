@@ -515,14 +515,17 @@ audiopitch #2 2**(-5/12)
 audioputmix #1 #2
 volume #1 2
 audioputreplace # #1
-}}{if:{get:effect}|=|h major 200|then:{set:code|
-get wdwn height h
-hueshifthsv # -134.7
-wave # 18.82 154.8
-cover # #w h
+}}{if:{get:effect}|=|electrodynamix|then:{set:code|
+grayscale #
+huecurvergba # red 1 0 0 0
+huecurvergba # green 1 1 1 0
+huecurvergba # blue 1 0 1 1
 copy # #1
-audiopitch #1 2**(-3.572/12)
-volume #1 1.2
+copy #1 #2
+audiopitch #1 2**(2/12)
+audiopitch #2 2**(-5/12)
+audioputmix #1 #2
+volume #1 2
 audioputreplace # #1
 }}
 {if:{get:subcommand}|=|raw|then:{code:{get:code}}{newline}-# raw of {get:effect}{newline}-# free 2 copy

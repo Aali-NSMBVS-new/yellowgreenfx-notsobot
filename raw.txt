@@ -492,6 +492,17 @@ audiopitch #2 2**(-5/12)
 audioputmix #1 #2
 volume #1 2
 audioputreplace # #1
+}}{if:{get:effect}|=|weird code|then:{set:code|
+hueshifthsv # 180
+waaw #
+swirl # -75
+copy # #1
+audiovibrato #1 17.5 1
+audiovibrato #1 17.5 1
+audiovibrato #1 17.5 1
+audiopitch #1 2**(-3.15/12)
+volume #1 2
+audioputreplace # #1
 }}
 {if:{get:subcommand}|=|raw|then:{code:{get:code}}{newline}-# raw of {get:effect}{newline}-# free 2 copy
 |else:

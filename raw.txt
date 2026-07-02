@@ -476,13 +476,13 @@ audioputreplace # #1
 }}{if:{get:effect}|=|g major 400|then:{set:code|
 get wdwn width w
 get wdwn height h
+zoom # 1.897
 waves # 1 10 3
 waves # 3 30 3
 waves # 5 50 3
 waves # 7 70 3
 waves # 9 90 3
 cover # w h
-zoom # 1.897
 swaprgba # bgra
 hueshifthsv # 106.56
 copy # #1

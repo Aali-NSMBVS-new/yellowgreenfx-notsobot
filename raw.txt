@@ -570,8 +570,8 @@ audioputreplace # #1
 }}{if:{get:effect}|=|g major 3|then:{set:code|
 get wdwn width w
 grayscale #
-huecurvergba # red 0.15 0.3 0.45 0.6 0.75 0.90 0.95 1
-hueshifthsv # 0 20
+gold #
+hueshifthsv # -50 20
 rotate # 90
 waves # 3 10 3
 waves # 9 30 3

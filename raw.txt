@@ -570,8 +570,6 @@ volume #1 2
 audioputreplace # #1
 }}{if:{get:effect}|=|g major 3|then:{set:code|
 get wdwn width w
-grayscale #
-invert #
 swaprgba # r00a
 rotate # 90
 waves # 3 10 3

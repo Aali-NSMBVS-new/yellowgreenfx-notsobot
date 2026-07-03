@@ -546,8 +546,8 @@ audioputreplace # #1
 }}{if:{get:effect}|=|u major|then:{set:code|
 get wdwn width w
 invert #
-grayscale #
-invertrgba # r00a
+swaprgba # bgra
+invert #
 flop #
 rotate # 90
 waves # 1.1*1 10 4

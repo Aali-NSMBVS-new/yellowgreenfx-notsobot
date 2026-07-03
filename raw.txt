@@ -571,6 +571,7 @@ audioputreplace # #1
 get wdwn width w
 grayscale #
 huecurvergba # red 0.15 0.3 0.45 0.6 0.75 0.90 0.95 1
+hueshifthsv # 0 20
 rotate # 90
 waves # 3 10 3
 waves # 9 30 3
@@ -581,7 +582,7 @@ rotate # 270
 cover # w #h
 copy # #1
 copy #1 #2
-audiopitch #2 2**(-6/12)
+audiopitch #2 2**(-6.044/12)
 audioputmix #1 #2
 volume #1 2
 audioputreplace # #1

@@ -585,6 +585,15 @@ audiopitch #2 2**(-6.044/12)
 audioputmix #1 #2
 volume #1 2
 audioputreplace # #1
+}}{if:{get:effect}|macanelis omicron effect|then:-# COMMENT: abobuc gave me the code and i modified it{set:code|
+waaw #
+explode #
+swirl # -87
+swaprgba # bgr
+hueshifthsv # -157
+copy # #1
+audiopitch #1 2**(-15.57/12)
+audioputreplace # #1
 }}
 {if:{get:subcommand}|=|raw|then:{code:{get:code}}{newline}-# raw of {get:effect}{newline}-# free 2 copy
 |else:
@@ -596,4 +605,4 @@ render m default yellowgreenfx
 }}}
 {choose:i love cats|Tag returned no content|steamed hams|are you purple|g {choose:major|minor|dorian} {choose: |{range:-10000|10000}}|kek|🦅🦅🦅|am i a joke|hey i feel so s- SHUT THE F##K UP|yellowgreengmd_gd is 0|oh my goddess|i want you crying for me{newline}i want you{newline}i want you{newline}WAWAWAWAWAWAWAWAAAA-|i would eat a hawk tuah|https://discord.com/oauth2/authorize?client_id=1518912803711483975&permissions=8&integration_type=0&scope=applications.commands+bot|try hollyvideo, jikervideo, zenithvideo, notsofx and tftotvideo too :D|Job took longer than 45 seconds|piped: h -> i|[_._tdc_._]: Yeah, your g major 100 kinda sucks ngl|I HOST THIS ALL ON GITHUB HELPPPP|bebobeboes|your autism, sire|cool right}
 -# use `.t sync` or `.t sync alt` afterwards pls 😭
--# on version `v0.362` currently, the third to 1.0!
+-# on version `v0.378` currently, the third to 1.0!

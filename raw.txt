@@ -585,15 +585,6 @@ audiopitch #2 2**(-6.044/12)
 audioputmix #1 #2
 volume #1 2
 audioputreplace # #1
-}}{if:{get:effect}|macanelis omicron effect|then:{set:code|
-waaw #
-explode #
-swirl # -87
-swaprgba # bgr
-hueshifthsv # -157
-copy # #1
-audiopitch #1 2**(-15.57/12)
-audioputreplace # #1
 }}
 {if:{get:subcommand}|=|raw|then:{code:{get:code}}{newline}-# raw of {get:effect}{newline}-# free 2 copy
 |else:

@@ -277,41 +277,18 @@ volume #1 2
 audioputmix #1 #6
 volume #1 2
 audioputreplace # #1
-}}{if:{get:effect}|=|nameless 2.0|then:{set:code|
+}}{if:{get:effect}|=|nameless 2.0|then:{sh:
+load {av}
+ffmpeg -i $FILE_1 wav.wav
+sox wav.wav ./output/nameless_2_0.wav pitch 2400 pitch -2500 pitch 100
+}{set:code|
+load FILE_1 a
 get # width w
 get # height h
 get # duration d
 wiggle # left 6 4
 wiggle # right 7 4
 wiggle # up 8 4
-wiggle # down 9 4
-audiopitch # 2**(-24/12)
-audiopitch # 2**(12/12)
-audiopitch # 2**(12/12)
-volume # 1.5
-audiopitch # 2**(-24/12)
-audiopitch # 2**(12/12)
-audiopitch # 2**(12/12)
-volume # 1.5
-audiopitch # 2**(-24/12)
-audiopitch # 2**(12/12)
-audiopitch # 2**(12/12)
-volume # 1.5
-audiopitch # 2**(-24/12)
-audiopitch # 2**(12/12)
-audiopitch # 2**(12/12)
-volume # 1.5
-audiopitch # 2**(-24/12)
-audiopitch # 2**(12/12)
-audiopitch # 2**(12/12)
-volume # 1.5
-audiopitch # 2**(-24/12)
-audiopitch # 2**(12/12)
-audiopitch # 2**(12/12)
-volume # 1.5
-copy # a
-convert a audio/mp3
-repeatduration a d
 audioputreplace # a
 }}{if:{get:effect}|=|g major 74|then:{set:code|
 hueshifthsvffmpeg # 180

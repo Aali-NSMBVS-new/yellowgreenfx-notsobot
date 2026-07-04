@@ -585,7 +585,7 @@ audiopitch #2 2**(-6.044/12)
 audioputmix #1 #2
 volume #1 2
 audioputreplace # #1
-}}{if:{get:effect}|macanelis omicron effect|then:-# COMMENT: abobuc gave me the code and i modified it{set:code|
+}}{if:{get:effect}|macanelis omicron effect|then:{set:code|
 waaw #
 explode #
 swirl # -87

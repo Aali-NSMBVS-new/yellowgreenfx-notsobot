@@ -602,7 +602,16 @@ join m m2
 volume m 2
 resize m w h
 }}
-{if:{get:subcommand}|=|multiply|then:{set:iscript:{repeat:{arg:2}|{replace:#|with:m|in:{get:code}}{newline}}}}
+{if:{get:subcommand}|=|1x2|then:{set:iscript|
+get wdwn width w
+get wdwn height h
+{replace:#|with:m|in:{get:code}}
+copy m m2
+{replace:#|with:m2|in:{get:code}}
+join m m2 true
+volume m 2
+resize m w h
+}}
 {iscript:
 load {media} m
 load {media} wdwn

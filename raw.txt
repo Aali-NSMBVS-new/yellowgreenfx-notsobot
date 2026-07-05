@@ -592,7 +592,28 @@ volume m3 2
 join m m3 true
 volume m 2
 |else:
+{if:{get:subcommand}|=|2x2cropped|then:
+{replace:#|with:m|in:{get:code}}
+copy m m2
+{replace:#|with:m2|in:{get:code}}
+copy m2 m3
+{replace:#|with:m3|in:{get:code}}
+copy m3 m4
+{replace:#|with:m4|in:{get:code}}
+crop m mw/2 mh/2 0 0
+crop m2 m2w/2 m2h/2 m2w/2 0
+crop m3 m3w/2 m3h/2 0 m3w/2
+crop m4 m4w/2 m4h/2 m4w/2 m4h/2
+join m m2 false
+volume m 2
+join m3 m4 false
+volume m3 2
+join m m3 true
+volume m 2
+|else:
 {replace:#|with:m|in:{get:code}}}
+}
+}
 render m default yellowgreenfx
 }}}
 {choose:i love cats|Tag returned no content|steamed hams|are you purple|g {choose:major|minor|dorian} {choose: |{range:-10000|10000}}|kek|🦅🦅🦅|am i a joke|hey i feel so s- SHUT THE F##K UP|yellowgreengmd_gd is 0|oh my goddess|i want you crying for me{newline}i want you{newline}i want you{newline}WAWAWAWAWAWAWAWAAAA-|i would eat a hawk tuah|https://discord.com/oauth2/authorize?client_id=1518912803711483975&permissions=8&integration_type=0&scope=applications.commands+bot|try hollyvideo, jikervideo, zenithvideo, notsofx, tftotvideo and tdc.fx too :D|Job took longer than 45 seconds|piped: h -> i|[_._tdc_._]: Yeah, your g major 100 kinda sucks ngl|I HOST THIS ALL ON GITHUB HELPPPP|bebobeboes|your autism, sire|cool right}

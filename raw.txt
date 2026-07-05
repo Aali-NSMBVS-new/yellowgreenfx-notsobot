@@ -602,7 +602,7 @@ join m m2
 volume m 2
 resize m w h
 }}
-{if:{get:subcommand}|=|multiply|then:{set:iscript:{repeat:{arg:2}|{replace:#|with:m|in:{get:code}}}}}
+{if:{get:subcommand}|=|multiply|then:{set:iscript:{repeat:{arg:2}|{replace:#|with:m|in:{get:code}}{newline}}}}
 {iscript:
 load {media} m
 load {media} wdwn

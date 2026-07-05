@@ -562,6 +562,14 @@ audiopitch #2 2**(-6.044/12)
 audioputmix #1 #2
 volume #1 2
 audioputreplace # #1
+}}{if:{get:effect}|=|conga busher|then:{set:code|
+hueshifthsv # -104
+waaw #
+copy # #1
+volume #1 2
+audiocompress #1
+audiotremolo #1 2750 1
+audioputreplace # #1
 }}
 {if:{get:subcommand}|=|raw|then:{code:{get:code}}{newline}-# raw of {get:effect}{newline}-# free 2 copy
 |else:

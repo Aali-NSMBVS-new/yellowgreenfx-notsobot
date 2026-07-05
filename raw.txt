@@ -606,6 +606,10 @@ copy # #1
 audiopitch #1 2**(-0.75/12)
 audioputreplace # #1
 }}
+{if:{get:subcommand}|=|raw|then:{code:{get:code}}
+-# open source {get:effect} code
+-# convert from yellowgreenfx compatible iscript to native iscript first
+|else:
 {if:{get:subcommand}|=|2x2|then:{set:iscript|
 get wdwn width w
 get wdwn height h
@@ -646,11 +650,33 @@ join m m2 true
 volume m 2
 resize m w h
 }}
+{if:{get:subcommand}|=|2x2cropped|then:{set:iscript|
+get wdwn width w
+get wdwn height h
+{replace:#|with:m|in:{get:code}}
+copy m m2
+{replace:#|with:m2|in:{get:code}}
+copy m2 m3
+{replace:#|with:m3|in:{get:code}}
+copy m3 m4
+{replace:#|with:m4|in:{get:code}}
+crop m mw/2 mh/2 0 0
+crop m2 m2w/2 m2h/2 m2w/2 0
+crop m3 m3w/2 m3h/2 0 m3h/2
+crop m4 m4w/2 m4h/2 m4w/2 m4h/2
+join m m2
+volume m 2
+join m3 m4
+volume m3 2
+join m m3 true
+volume m 2
+}}
 {iscript:
 load {media} m
 load {media} wdwn
 {get:iscript}
 render m default yellowgreenfx
+}
 }
 {choose:i love cats|Tag returned no content|steamed hams|are you purple|g {choose:major|minor|dorian} {choose: |{range:-10000|10000}}|kek|🦅🦅🦅|am i a joke|hey i feel so s- SHUT THE F##K UP|yellowgreengmd_gd is 0|oh my goddess|i want you crying for me{newline}i want you{newline}i want you{newline}WAWAWAWAWAWAWAWAAAA-|i would eat a hawk tuah|https://discord.com/oauth2/authorize?client_id=1518912803711483975&permissions=8&integration_type=0&scope=applications.commands+bot|try hollyvideo, jikervideo, zenithvideo, notsofx, tftotvideo and tdc.fx too :D|Job took longer than 45 seconds|piped: h -> i|[_._tdc_._]: Yeah, your g major 100 kinda sucks ngl|I HOST THIS ALL ON GITHUB HELPPPP|bebobeboes|your autism, sire|cool right}
 -# use `.t sync` or `.t sync alt` afterwards pls 😭

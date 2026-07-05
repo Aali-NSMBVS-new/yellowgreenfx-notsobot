@@ -585,8 +585,11 @@ copy m2 m3
 copy m3 m4
 {replace:#|with:m4|in:{get:code}}
 join m m2 false
+volume m 2
 join m3 m4 false
+volume m3 2
 join m m3 true
+volume m 2
 |else:
 {replace:#|with:m|in:{get:code}}}
 render m default yellowgreenfx

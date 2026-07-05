@@ -582,6 +582,14 @@ hueshifthsv # 5.875
 copy # #1
 audiopitch #1 2**(0.125/12)
 audioputreplace # #1
+}}{if:{get:effect}|=|sphere noting|then:{set:code|
+explode # 0.2
+copy # #1
+copy #1 #2
+audiopitch #2 2**(3.5/12)
+audioputmix #1 #2
+volume #1 2
+audioputreplace # #1
 }}
 {if:{get:subcommand}|=|2x2|then:{set:iscript|
 get wdwn width w

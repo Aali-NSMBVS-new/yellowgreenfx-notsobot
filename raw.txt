@@ -646,6 +646,14 @@ join m m2 true
 volume m 2
 resize m w h
 }}
+{if:{get:subcommand}|=|vegpro|then:{set:iscript|
+load {iv} m
+{replace:#|with:m|in:{get:code}}
+copy m am
+volume m2 0
+snip m2 0.03
+overlay m m2 0 0 none 0.01 1 true 62.5
+}
 {iscript:
 load {media} m
 load {media} wdwn

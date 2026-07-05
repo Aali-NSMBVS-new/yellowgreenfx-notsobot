@@ -595,6 +595,16 @@ volume #1 2
 audioputmix #1 #3
 volume #1 2
 audioputreplace # #1
+}}{if:{get:effect}|=|three fourths mari group|then:{set:code|
+hueshifthsv # 35.75
+copy # #1
+audiopitch #1 2**(0.75/12)
+audioputreplace # #1
+}}{if:{get:effect}|=|three fourths luig group|then:{set:code|
+hueshifthsv # -35.75
+copy # #1
+audiopitch #1 2**(-0.75/12)
+audioputreplace # #1
 }}
 {if:{get:subcommand}|=|2x2|then:{set:iscript|
 get wdwn width w

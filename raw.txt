@@ -653,7 +653,7 @@ copy m am
 volume m2 0
 snip m2 0.03
 overlay m m2 0 0 none 0.01 1 true 62.5
-}
+}}
 {iscript:
 load {media} m
 load {media} wdwn

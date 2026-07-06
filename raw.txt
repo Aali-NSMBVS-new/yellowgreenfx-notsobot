@@ -640,6 +640,18 @@ volume #2 2
 audioputmix #1 #2
 volume #1 2
 audioputreplace # #1
+}}{if:{get:effect}|=|x minor 159|then:{set:code|
+grayscale #
+huecurvergba # red 1 0 0
+huecurvergba # green 1 1 0
+huecurvergba # blue 1 0 0
+copy # #1
+copy #1 #2
+audiopitch #1 2**(-7/12)
+audiopitch #2 2**(5/12)
+audioputmix #1 #2
+volume #1 2
+audioputreplace # #1
 }}
 {if:{get:subcommand}|=|raw|then:{code:{get:code}}
 -# open source {get:effect} code

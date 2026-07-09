@@ -668,6 +668,18 @@ audiopitch #2 2**(-4/12)
 audioputmix #1 #2
 volume #1 2
 audioputreplace # #1
+}}{if:{get:effect}|=|a major|then:{set:code|
+invert #
+hueshifthsv # 0.432*360
+waaw #
+swirl # -0.14*200
+copy # #1
+copy #1 #2
+audiopitch #1 2**(5.6/12)
+audiopitch #2 2**(10.6/12)
+audioputmix #1 #2
+volume #1 2
+audioputreplace # #1
 }}
 {if:{get:subcommand}|=|raw|then:{code:{get:code}}
 -# open source {get:effect} code
@@ -740,8 +752,7 @@ load {media} wdwn
 {get:iscript}
 render m default yellowgreenfx
 }
-}
 {choose:i love cats|Tag returned no content|steamed hams|are you purple|g {choose:major|minor|dorian} {choose: |{range:-10000|10000}}|kek|🦅🦅🦅|am i a joke|hey i feel so s- SHUT THE F##K UP|yellowgreengmd_gd is 0|oh my goddess|i want you crying for me{newline}i want you{newline}i want you{newline}WAWAWAWAWAWAWAWAAAA-|i would eat a hawk tuah|https://discord.com/oauth2/authorize?client_id=1518912803711483975&permissions=8&integration_type=0&scope=applications.commands+bot|try hollyvideo, jikervideo, zenithvideo, notsofx, tftotvideo and tdc.fx too :D|Job took longer than 45 seconds|piped: h -> i|[_._tdc_._]: Yeah, your g major 100 kinda sucks ngl|I HOST THIS ALL ON GITHUB HELPPPP|bebobeboes|your autism, sire|cool right|https://cdn.discordapp.com/emojis/1511347303959760947.webp?size=56|intel celery|i can add preview 1280 from zenithvideo}
 -# use `.t sync` or `.t sync alt` afterwards pls 😭
--# on version `v0.381` currently, the third to 1.0!
+-# on version `v0.396-beta.1` currently, the third to 1.0!
 }

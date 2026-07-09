@@ -672,7 +672,7 @@ audioputreplace # #1
 invert #
 hueshifthsv # 0.432*360
 waaw #
-swirl # -0.14*200
+swirl # -0.14*-200
 copy # #1
 copy #1 #2
 audiopitch #1 2**(5.6/12)

@@ -668,7 +668,7 @@ audiopitch #2 2**(-4/12)
 audioputmix #1 #2
 volume #1 2
 audioputreplace # #1
-}}}
+}}
 {if:{get:subcommand}|=|raw|then:{code:{get:code}}
 -# open source {get:effect} code
 -# convert from yellowgreenfx compatible iscript to native iscript first

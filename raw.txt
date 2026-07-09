@@ -655,7 +655,20 @@ audiopitch #2 2**(5/12)
 audioputmix #1 #2
 volume #1 2
 audioputreplace # #1
-}}
+}}{if:{get:effect}|=|editor digitals g major|then:{set:code|
+grayscale #
+huecurvergba # red 244/255 0/255
+huecurvergba # green 0/255 0/255
+huecurvergba # blue 227/255 0/255
+swirl # -27
+copy # #1
+copy #1 #2
+audiopitch #1 2**(0/12)
+audiopitch #2 2**(-4/12)
+audioputmix #1 #2
+volume #1 2
+audioputreplace # #1
+}}}
 {if:{get:subcommand}|=|raw|then:{code:{get:code}}
 -# open source {get:effect} code
 -# convert from yellowgreenfx compatible iscript to native iscript first

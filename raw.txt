@@ -691,6 +691,7 @@ waves # 2.6*5 50 7
 waves # 2.7*7 70 7
 waves # 2.8*9 90 7
 rotate # 270
+cover # w #h
 swirl # -102
 audiopitch # 2**(-7.47/12)
 }}

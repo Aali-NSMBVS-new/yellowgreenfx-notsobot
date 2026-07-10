@@ -685,11 +685,11 @@ get wdwn width w
 hueshifthsv # -47
 swirl # 102
 rotate # 90
-waves # 1.4*1 10 2
-waves # 1.4*3 30 2
-waves # 1.4*5 50 2
-waves # 1.4*7 70 2
-waves # 1.4*9 90 2
+waves # 2.5*1 10 7
+waves # 2.5*3 30 7
+waves # 2.6*5 50 7
+waves # 2.7*7 70 7
+waves # 2.8*9 90 7
 rotate # 270
 swirl # -102
 audiopitch # 2**(-7.47/12)

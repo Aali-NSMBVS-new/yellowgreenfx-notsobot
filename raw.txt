@@ -680,6 +680,19 @@ audiopitch #2 2**(10.6/12)
 audioputmix #1 #2
 volume #1 2
 audioputreplace # #1
+}}{if:{get:effect}|=|discontinued effect|then:{set:code|
+get wdwn width w
+hueshifthsv # -47
+swirl # 102
+rotate # 90
+waves # 1.4*1 10 2
+waves # 1.4*3 30 2
+waves # 1.4*5 50 2
+waves # 1.4*7 70 2
+waves # 1.4*9 90 2
+rotate # 270
+swirl # -102
+audiopitch # 2**(-7.47/12)
 }}
 {if:{get:subcommand}|=|raw|then:{code:{get:code}}
 -# open source {get:effect} code
@@ -701,6 +714,7 @@ join m3 m4
 volume m3 2
 join m m3 true
 volume m 2
+resize m w h
 }}
 {if:{get:subcommand}|=||then:{set:iscript|
 {replace:#|with:m|in:{get:code}}

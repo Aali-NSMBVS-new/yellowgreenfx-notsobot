@@ -730,6 +730,20 @@ volume #1 2
 audioputmix #1 #6
 volume #1 2
 audioputreplace # #1
+}}{if:{get:effect}|=|continued effect|then:{set:code|
+get wdwn width w
+hueshifthsv # -47
+swirl # -102
+rotate # 90
+waves # 2.5*1 10 7
+waves # 2.5*3 30 7
+waves # 2.6*5 50 7
+waves # 2.7*7 70 7
+waves # 2.8*9 90 7
+rotate # 270
+cover # w #h
+swirl # 102
+audiopitch # 2**(7.47/12)
 }}
 {if:{get:subcommand}|=|raw|then:{code:{get:code}}
 -# open source {get:effect} code
@@ -796,6 +810,44 @@ join m3 m4
 volume m3 2
 join m m3 true
 volume m 2
+}}
+{if:{get:subcommand}|=|3x3|then:{set:iscript|
+get wdwn width w
+get wdwn height h
+{replace:#|with:m|in:{get:code}}
+copy m m2
+{replace:#|with:m2|in:{get:code}}
+copy m2 m3
+{replace:#|with:m3|in:{get:code}}
+copy m3 m4
+{replace:#|with:m4|in:{get:code}}
+copy m4 m5
+{replace:#|with:m5|in:{get:code}}
+copy m5 m6
+{replace:#|with:m6|in:{get:code}}
+copy m6 m7
+{replace:#|with:m7|in:{get:code}}
+copy m7 m8
+{replace:#|with:m8|in:{get:code}}
+copy m8 m9
+{replace:#|with:m9|in:{get:code}}
+join m m2
+volume m 2
+join m m3
+volume m 2
+join m4 m5
+volume m4 2
+join m4 m6
+volume m4 2
+join m7 m8
+volume m7 2
+join m7 m9
+volume m7 2
+join m m4 true
+volume m 2
+join m m7 true
+volume m 2
+resize m w h
 }}
 {iscript:
 load {media} m

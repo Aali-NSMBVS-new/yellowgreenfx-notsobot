@@ -903,16 +903,9 @@ join m m7 true
 volume m 2
 resize m w h
 }}
-{if:{get:subcommand}|=|ihtx|then:{set:iscript:
-snip m 0 {arg:3}
+{if:{get:subcommand}|=|buggy|then:{set:iscript|
 {replace:#|with:m|in:{get:code}}
-copy m base
-{repeat:{arg:2}|
-copy base 0
-{replace:#|with:0|in:{get:code}}
-concat m 0
-{replace:#|with:base|in:{get:code}}
-}
+shuffle m 0.2
 }}
 
 {iscript:
@@ -921,7 +914,7 @@ load {media} wdwn
 {get:iscript}
 render m default yellowgreenfx
 }
-{choose:i love cats|Tag returned no content|steamed hams|are you purple|g {choose:major|minor|dorian} {choose: |{range:-10000|10000}}|kek|🦅🦅🦅|am i a joke|hey i feel so s- SHUT THE F##K UP|yellowgreengmd_gd is 0|oh my goddess|i want you crying for me{newline}i want you{newline}i want you{newline}WAWAWAWAWAWAWAWAAAA-|i would eat a hawk tuah|https://discord.com/oauth2/authorize?client_id=1518912803711483975&permissions=8&integration_type=0&scope=applications.commands+bot|try hollyvideo, jikervideo, zenithvideo, notsofx, tftotvideo and tdc.fx too :D|Job took longer than 45 seconds|piped: h -> i|[_._tdc_._]: Yeah, your g major 100 kinda sucks ngl|I HOST THIS ALL ON GITHUB HELPPPP|bebobeboes|your autism, sire|cool right|https://cdn.discordapp.com/emojis/1511347303959760947.webp?size=56|intel celery|i can add preview 1280 from zenithvideo}
+{choose:i love cats|Tag returned no content|steamed hams|are you purple|g {choose:major|minor|dorian} {choose: |{range:-10000|10000}}|kek|🦅🦅🦅|am i a joke|hey i feel so s- SHUT THE F##K UP|yellowgreengmd_gd is 0|oh my goddess|i want you crying for me{newline}i want you{newline}i want you{newline}WAWAWAWAWAWAWAWAAAA-|i would eat a hawk tuah|https://discord.com/oauth2/authorize?client_id=1518912803711483975&permissions=8&integration_type=0&scope=applications.commands+bot|try hollyvideo, jikervideo, zenithvideo, notsofx, tftotvideo and tdc.fx too :D|Job took longer than 45 seconds|piped: h -> i|[_._tdc_._]: Yeah, your g major 100 kinda sucks ngl|I HOST THIS ALL ON GITHUB HELPPPP|bebobeboes|your autism, sire|cool right|https://cdn.discordapp.com/emojis/1511347303959760947.webp?size=56|intel celery|i can add preview 1280 from zenithvideo|traf o data? more like traf o meter|bill chilling}
 -# use `.t sync` or `.t sync alt` afterwards pls 😭
--# on version `v0.396-beta.2` currently, the third to 1.0!
+-# on version `v0.396-beta.3` currently, the third to 1.0!
 }}

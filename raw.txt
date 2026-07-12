@@ -903,6 +903,18 @@ join m m7 true
 volume m 2
 resize m w h
 }}
+{if:{get:subcommand}|=|ihtx|then:{set:iscript:
+snip m 0 {arg:3}
+{replace:#|with:m|in:{get:code}}
+copy m base
+{repeat:{arg:2}|
+copy base 0
+{replace:#|with:0|in:{get:code}}
+concat m 0
+{replace:#|with:base|in:{get:code}}
+}
+}}
+
 {iscript:
 load {media} m
 load {media} wdwn

@@ -280,19 +280,19 @@ volume #1 2
 audioputmix #1 #6
 volume #1 2
 audioputreplace # #1
-}}{if:{get:effect}|=|nameless 2.0|then:{sh:
-load {av}
-ffmpeg -i $FILE_1 wav.wav
-sox wav.wav ./output/nameless_2_0.wav pitch 2400 pitch -2500 pitch 100
-}{set:code|
-load FILE_1 a
+}}{if:{get:effect}|=|nameless 2.0|then:{set:code|
+copy # #1
+audiopitch #1 2**(-25/12)
+audiopitch #1 2**(12/12)
+audiopitch #1 2**(12/12)
+audiopitch #1 2**(1/12)
 get # width w
 get # height h
 get # duration d
 wiggle # left 6 4
 wiggle # right 7 4
 wiggle # up 8 4
-audioputreplace # a
+audioputreplace # #1
 }}{if:{get:effect}|=|g major 74|then:{set:code|
 hueshifthsvffmpeg # 180
 invert #
@@ -744,7 +744,59 @@ rotate # 270
 cover # w #h
 swirl # 102
 audiopitch # 2**(7.47/12)
+}}{if:{get:effect}|=|theuser10s g major 5|then:{set:code|
+copy # #r
+get wdwn width w
+hueshifthsv #r 180 0.8
+waaw #r
+rotate #r 90
+waves #r 1 10 3
+waves #r 3 30 3
+waves #r 5 50 3
+waves #r 7 70 3
+waves #r 9 90 3
+rotate #r 270
+cover #r w #h
+copy #r #1r
+audiopitch #1r 2**(-2.5/12)
+volume #1r 1.07
+audioputreplace # #1r
+crop # #w/2 #h 0 0
+crop #r #rw/2 #rh #rw/2 0
+join # #r false
+volume # 2
+}}{if:{get:effect}|=|dxi|then:{set:code|
+hueshifthsv # 23.7 2.4
+invert #
+swirl # 0.53
+copy # #1
+copy #1 #2
+copy #1 #3
+audiopitch #1 2**(0.15/12)
+audiopitch #2 2**(-6.85/12)
+audiopitch #3 2**(7.15/12)
+audioputmix #1 #2
+volume #1 2
+audioputmix #1 #3
+volume #1 2
+audioputreplace # #1
+}}{if:{get:effect}|=|discontinued dxi|then:{set:code|
+hueshifthsv # 180+23.7 2.4
+invert #
+swirl # 0.53
+copy # #1
+copy #1 #2
+copy #1 #3
+audiopitch #1 2**(0.15/12)
+audiopitch #2 2**(-6.85/12)
+audiopitch #3 2**(7.15/12)
+audioputmix #1 #2
+volume #1 2
+audioputmix #1 #3
+volume #1 2
+audioputreplace # #1
 }}
+
 {if:{get:subcommand}|=|raw|then:{code:{get:code}}
 -# open source {get:effect} code
 -# convert from yellowgreenfx compatible iscript to native iscript first
@@ -857,5 +909,5 @@ render m default yellowgreenfx
 }
 {choose:i love cats|Tag returned no content|steamed hams|are you purple|g {choose:major|minor|dorian} {choose: |{range:-10000|10000}}|kek|🦅🦅🦅|am i a joke|hey i feel so s- SHUT THE F##K UP|yellowgreengmd_gd is 0|oh my goddess|i want you crying for me{newline}i want you{newline}i want you{newline}WAWAWAWAWAWAWAWAAAA-|i would eat a hawk tuah|https://discord.com/oauth2/authorize?client_id=1518912803711483975&permissions=8&integration_type=0&scope=applications.commands+bot|try hollyvideo, jikervideo, zenithvideo, notsofx, tftotvideo and tdc.fx too :D|Job took longer than 45 seconds|piped: h -> i|[_._tdc_._]: Yeah, your g major 100 kinda sucks ngl|I HOST THIS ALL ON GITHUB HELPPPP|bebobeboes|your autism, sire|cool right|https://cdn.discordapp.com/emojis/1511347303959760947.webp?size=56|intel celery|i can add preview 1280 from zenithvideo}
 -# use `.t sync` or `.t sync alt` afterwards pls 😭
--# on version `v0.396-beta.1` currently, the third to 1.0!
+-# on version `v0.396-beta.2` currently, the third to 1.0!
 }}

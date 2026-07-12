@@ -768,6 +768,7 @@ volume # 2
 }}{if:{get:effect}|=|dxi|then:{set:code|
 hueshifthsv # 23.7 2.4
 invert #
+shake # 0 4 true
 swirl # 0.53
 copy # #1
 copy #1 #2
@@ -783,13 +784,14 @@ audioputreplace # #1
 }}{if:{get:effect}|=|discontinued dxi|then:{set:code|
 hueshifthsv # 180+23.7 2.4
 invert #
+shake # 0 4 true
 swirl # 0.53
 copy # #1
 copy #1 #2
 copy #1 #3
-audiopitch #1 2**(0.15/12)
-audiopitch #2 2**(-6.85/12)
-audiopitch #3 2**(7.15/12)
+audiopitch #1 2**(0/12)
+audiopitch #2 2**(-7/12)
+audiopitch #3 2**(7/12)
 audioputmix #1 #2
 volume #1 2
 audioputmix #1 #3

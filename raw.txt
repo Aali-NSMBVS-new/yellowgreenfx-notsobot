@@ -844,14 +844,14 @@ audiopitch #1 2**(4/12)
 audioputreplace # #1
 }}{if:{get:effect}|=|win12knowns g major 91|then:{set:code|
 get wdwn width w
-rotate #r 90
-waves #r 1 10 4.7
-waves #r 3 30 4.3
-waves #r 5 50 3.1
-waves #r 7 70 5.2
-waves #r 9 90 3.4
-rotate #r 270
-cover #r w #h
+rotate # 90
+waves # 1 10 4.7
+waves # 3 30 4.3
+waves # 5 50 3.1
+waves # 7 70 5.2
+waves # 9 90 3.4
+rotate # 270
+cover # w #h
 hueshifthsvffmpeg # 205 1.2
 copy # #1
 copy #1 #2

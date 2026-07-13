@@ -1,7 +1,7 @@
 {set:banned|{js:
 const bannedList = ["1468011130755748084", "1517697583508881520"]
 console.log(bannedList.includes("{id}"))
-}}{if:{get:banned}|=|true|then:GET THE FK OUT BRO OUT OF YELLOWGREENFX AND TOUCH GRASS :/|else:{set:effect|{or:{arg:0}|original}}
+}}{if:{get:banned}|=|true|then:GET THE FK OUT BRO OUT OF YELLOWGREENFX AND TOUCH GRASS|else:{set:effect|{or:{arg:0}|original}}
 {set:subcommand|{arg:1}}
 {if:{get:effect}|=|original|then:{set:code|speed # 1}}
 {if:{get:effect}|=|reversed|then:{set:code|reverse # 1}}

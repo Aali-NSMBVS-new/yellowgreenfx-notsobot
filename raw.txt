@@ -814,18 +814,6 @@ volume #1 2
 audiodestroy #1
 volume #1 0.7
 audioputreplace # #1
-}}{if:{get:effect}|=|mangle|then:{set:code|
-haah #
-hueshifthsv # 180 1.1
-swaprgba # grba
-zoom # 0.75
-implode # 0.4
-zoom # 1.33
-explode # 0.7
-copy # #1
-audiodestroy #1
-volume #1 0.7
-audioputreplace # #1
 }}
 
 {if:{get:subcommand}|=|raw|then:{code:{get:code}}

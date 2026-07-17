@@ -609,14 +609,14 @@ copy # #1
 audiopitch #1 2**(-0.75/12)
 audioputreplace # #1
 }}{if:{get:effect}|=|low voice|then:{set:code|
-hueshifthsvffmpeg # 180 0 0
+hueshifthsvffmpeg # 180 1 0
 haah #
 speed # 0.67
 copy # #1
 audiopitch #1 2**(-5/12)
 audioputreplace # #1
 }}{if:{get:effect}|=|low voice hsv|then:{set:code|
-hueshifthsv # 180 0 0
+hueshifthsv # 180 1 0
 haah #
 speed # 0.67
 copy # #1

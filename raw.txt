@@ -878,6 +878,43 @@ audiopitch #2 2**(7/12)
 audioputmix #1 #2
 volume #1 2
 audioputreplace # #1
+}}{if:{get:effect}|=|miracle major 1|then:{set:code|
+get wdwn width w
+get wdwn height h
+rotate # 90
+wave # w/16 w/3.6
+rotate # -90
+cover # w h
+wave # -h/24 w/2
+cover # w h
+swaprgba # bgra
+copy # #1
+copy #1 #2
+copy #1 #3
+copy #1 #4
+audiopitch #1 2**(0.1/12)
+audiopitch #2 2**(-0.1/12)
+audiopitch #3 2**(0.4/12)
+audiopitch #4 2**(-0.4/12)
+audioputmix #1 #2
+volume #1
+audioputmix #1 #3
+volume #1
+audioputmix #1 #4
+volume #1
+audioputreplace # #1
+}}{if:{get:effect}|=|0 bxi|then:{set:code|
+hueshifthsv # 167
+contrast # -1
+shake # 0 5 true
+flop #
+clone # #1
+copy #1 #2
+audiopitch #1 2**(7/12)
+audiopitch #2 2**(-12/12)
+audioputmix #1 #2
+volume #1
+audioputreplace # #1
 }}
 
 {if:{get:subcommand}|=|raw|then:{code:{get:code}}

@@ -918,6 +918,7 @@ audioputreplace # #1
 }}{if:{get:effect}|=|g major 7 low pitch|then:{set:code|
 grayscale #
 huecurvergba # red 113/255 0
+huecurvergba # green 0 0 0
 huecurvergba # blue 1 0
 copy # #1
 copy #1 #2

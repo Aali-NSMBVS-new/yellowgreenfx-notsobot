@@ -951,7 +951,7 @@ embedsarray = []
 embed = {
   "author": {"name":"{usertag}","icon_url":"{avatar}"},
   "title": "raw code of {get:effect}",
-  "description": "{code:{get:code}}",
+  "description": """{code:{get:code}}""",
   "footer": {"text":"YellowGreenGMD's Effects","icon_url":icon}
 }
 embedsarray.append(embed)

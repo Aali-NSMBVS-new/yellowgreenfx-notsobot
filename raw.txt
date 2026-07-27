@@ -10,7 +10,8 @@ embed = {
   "author": {"name":"{usertag}","icon_url":"{avatar}"},
   "title": "warning!",
   "description": "sorry, {usertag}. but the owner of YellowGreenGMD's Effects has banned you.\ntry another tag like this one. one of them is HollyVideo, by Holly Hewko!",
-  "footer": {"text":"YellowGreenGMD's Effects","icon_url":icon}
+  "footer": {"text":"YellowGreenGMD's Effects","icon_url":icon},
+  "color": 0x3f8000
 }
 embedsarray.append(embed)
 embedsjson["embeds"] = embedsarray
@@ -952,7 +953,8 @@ embed = {
   "author": {"name":"{usertag}","icon_url":"{avatar}"},
   "title": "raw code of {get:effect}",
   "description": """{code:{replace:{newline}|\n|{get:code}}}""",
-  "footer": {"text":"YellowGreenGMD's Effects","icon_url":icon}
+  "footer": {"text":"YellowGreenGMD's Effects","icon_url":icon},
+  "color": 0x3f8000
 }
 embedsarray.append(embed)
 embedsjson["embeds"] = embedsarray

@@ -16,7 +16,7 @@ embed = {
 embedsarray.append(embed)
 embedsjson["embeds"] = embedsarray
 print(json.dumps(embedsjson,indent=4))
-}|else:{if:{argslen}|>=|1|then:{set:effect|{arg:0}}
+}|else:{set:effect|{arg:0}}
 {set:subcommand|{arg:1}}
 {if:{get:effect}|=|original|then:{set:code|speed # 1}}
 {if:{get:effect}|=|reversed|then:{set:code|reverse # 1}}
@@ -1096,20 +1096,4 @@ render m default yellowgreenfx
 -# use `.t sync` or `.t sync alt` afterwards pls 😭
 -# on version `v0.396-pre` currently, the third to 1.0!
 -# code user:  {user} {if:{user}|=|yellowgreengmd_gd|then:(OWNER)|else:}
-}}|else:{python:
-icon = "https://cdn.discordapp.com/attachments/1526319467011899464/1531441731537473657/1_3_1.png?ex=6a6939c1&is=6a67e841&hm=df4e709934ea4064f5b87e2c7eb4888476cf8f14fe4e222ffecbe6333d4017a0&"
-import json
-embedsjson = {"embeds":[]}
-embedsarray = []
-embed = {
-  "author": {"name":"{usertag}","icon_url":"{avatar}"},
-  "title": "YellowGreenFX help",
-  "description": "**YellowGreen**GMD's Effects (**FX**) is an ImageScript/MediaScript effect tool by YellowGreenGMD.",
-  "fields": [{"name":"developers","value":"YellowGreenGMD & #•that miracle editor 1999•#!"}],
-  "footer": {"text":"YellowGreenGMD's Effects","icon_url":icon},
-  "color": 0x3f8000
-}
-embedsarray.append(embed)
-embedsjson["embeds"] = embedsarray
-print(json.dumps(embedsjson,indent=4))
-}}}
+}}

@@ -1096,7 +1096,7 @@ render m default yellowgreenfx
 -# use `.t sync` or `.t sync alt` afterwards pls 😭
 -# on version `v0.396-pre` currently, the third to 1.0!
 -# code user:  {user} {if:{user}|=|yellowgreengmd_gd|then:(OWNER)|else:}
-}}|else:{python:
+}}}|else:{python:
 icon = "https://cdn.discordapp.com/attachments/1526319467011899464/1531441731537473657/1_3_1.png?ex=6a6939c1&is=6a67e841&hm=df4e709934ea4064f5b87e2c7eb4888476cf8f14fe4e222ffecbe6333d4017a0&"
 import json
 embedsjson = {"embeds":[]}

@@ -944,7 +944,7 @@ volume #1
 audioputreplace # #1
 }}{if:{get:effect}|=|sad x|then:{set:code|
 get wdwn height h
-waves # 3*#w/32 0.8*-#w/2
+wave # 3*#w/32 0.8*-#w/2
 cover # #w h
 invert #
 hueshifthsv # 0.622*360
@@ -956,7 +956,7 @@ volume #1
 audioputreplace # #1
 }}{if:{get:effect}|=|crying x|then:{set:code|
 get wdwn height h
-waves # 1.13*#w/32 0.5372*-#w/2
+wave # 1.13*#w/32 0.5372*-#w/2
 cover # #w h
 invert #
 hueshifthsv # 0.622*360

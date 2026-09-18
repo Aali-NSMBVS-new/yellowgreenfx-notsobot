@@ -1025,7 +1025,7 @@ resize m w h
 load {media} m
 load {media} wdwn
 {get:iscript}
-export wdwnw wdwnh wdwnd wdwnfc
+exportmultiple wdwnw wdwnh wdwnd wdwnfc
 render m default yellowgreenfx
 }
 {python:import json

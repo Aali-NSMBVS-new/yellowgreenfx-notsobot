@@ -879,43 +879,6 @@ audiopitch #2 2**(7/12)
 audioputmix #1 #2
 volume #1 2
 audioputreplace # #1
-}}{if:{get:effect}|=|miracle major 1|then:{set:code|
-get wdwn width w
-get wdwn height h
-rotate # 90
-wave # w/16 w/3.6
-rotate # -90
-cover # w h
-wave # -h/24 w/2
-cover # w h
-swaprgba # bgra
-copy # #1
-copy #1 #2
-copy #1 #3
-copy #1 #4
-audiopitch #1 2**(0.1/12)
-audiopitch #2 2**(-0.1/12)
-audiopitch #3 2**(0.4/12)
-audiopitch #4 2**(-0.4/12)
-audioputmix #1 #2
-volume #1
-audioputmix #1 #3
-volume #1
-audioputmix #1 #4
-volume #1
-audioputreplace # #1
-}}{if:{get:effect}|=|0 bxi|then:{set:code|
-hueshifthsv # 167
-contrast # -1
-shake # 0 5 true
-flop #
-copy # #1
-copy #1 #2
-audiopitch #1 2**(7/12)
-audiopitch #2 2**(-12/12)
-audioputmix #1 #2
-volume #1
-audioputreplace # #1
 }}{if:{get:effect}|=|g major 7 low pitch|then:{set:code|
 grayscale #
 huecurvergba # red 113/255 0
@@ -1062,9 +1025,9 @@ resize m w h
 load {media} m
 load {media} wdwn
 {get:iscript}
+export wdwnw wdwnh wdwnd wdwnfc
 render m default yellowgreenfx
 }
-{choose:i love cats|Tag returned no content|steamed hams|are you purple|g {choose:major|minor|dorian} {choose: |{range:-10000|10000}}|kek|🦅🦅🦅|am i a joke|hey i feel so s- SHUT THE F##K UP|yellowgreengmd_gd is 0|oh my goddess|i want you crying for me{newline}i want you{newline}i want you{newline}WAWAWAWAWAWAWAWAAAA-|i would eat a hawk tuah|https://discord.com/oauth2/authorize?client_id=1518912803711483975&permissions=8&integration_type=0&scope=applications.commands+bot|try hollyvideo, jikervideo, zenithvideo, notsofx, tftotvideo and tdc.fx too :D|Job took longer than 45 seconds|piped: h -> i|[_._tdc_._]: Yeah, your g major 100 kinda sucks ngl|I HOST THIS ALL ON GITHUB HELPPPP|bebobeboes|your autism, sire|cool right|https://cdn.discordapp.com/emojis/1511347303959760947.webp?size=56|intel celery|i can add preview 1280 from zenithvideo|traf o data? more like traf o meter|bill chilling|the creator of yellowgreenfx is autistic}
--# use `.t sync` or `.t sync alt` afterwards pls 😭
--# on version `v0.396-pre` currently, the third to 1.0!
+{python:import json
+print(json.dumps({"embeds":[{"author": {"name":"{usertag}","icon_url":"{avatar}"},"title": "render complete","description": "this clip is great! isn't it?","fields":[{"name":"video duration","value":"{get:wdwnd}","inline":True},{"name":"video resolution","value":"{get:wdwnw}x{get:wdwnh}","inline":True}]"footer": {"text":"YellowGreenGMD's Effects","icon_url":"https://cdn.discordapp.com/attachments/1526319467011899464/1531441731537473657/1_3_1.png?ex=6a6939c1&is=6a67e841&hm=df4e709934ea4064f5b87e2c7eb4888476cf8f14fe4e222ffecbe6333d4017a0&"},"color": 0x3f8000}]}))}
 }}

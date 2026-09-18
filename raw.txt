@@ -926,7 +926,7 @@ contrast # -1
 copy # #1
 copy #1 #2
 audiopitch #1 2**(2/12)
-audiopitch #2 2**(-6/24)
+audiopitch #2 2**(-3/12)
 audioputmix #1 #2
 volume #1 2.3
 audioputreplace # #1

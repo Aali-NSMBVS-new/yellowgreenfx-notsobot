@@ -915,6 +915,21 @@ audiopitch #2 2**(-5/12)
 audioputmix #1 #2
 volume #1
 audioputreplace # #1
+}}{if:{get:effect}|=|braxton hudsons g major 74|then:{set:code|
+zoom # 0.75
+implode # 0.4
+zoom # 1.33
+explode # 0.7
+explode # 0.8
+contrast # -1
+
+copy # #1
+copy #1 #2
+audiopitch #1 2**(2/12)
+audiopitch #2 2**(6/24)
+audioputmix #1 #2
+volume #1 2.3
+audioputreplace # #1
 }}
 
 {if:{get:subcommand}|=|raw|then:{python:import json

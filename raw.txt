@@ -27,11 +27,6 @@ console.log(bannedList.includes("{id}"))
           }
         },
         {
-          "type": 14,
-          "divider": true,
-          "spacing": 1
-        },
-        {
           "type": 12,
           "items": [
             {
@@ -915,7 +910,7 @@ volume #1 2.3
 audioputreplace # #1
 }}
 
-{if:{get:subcommand}|=|raw|then:{componentjson:{
+{if:{get:subcommand}|=|raw|then:{exit:{componentjson:{
   "flags": 32768,
   "components": [
     {
@@ -941,11 +936,6 @@ audioputreplace # #1
           }
         },
         {
-          "type": 14,
-          "divider": true,
-          "spacing": 1
-        },
-        {
           "type": 12,
           "items": [
             {
@@ -957,7 +947,7 @@ audioputreplace # #1
       ]
     }
   ]
-}}}
+}}}}
 |else:
 {if:{get:subcommand}|=|2x2|then:{set:iscript|
 get wdwn width w
@@ -1098,11 +1088,6 @@ render m default yellowgreenfx
         {
           "type": 10,
           "content": "**video duration:** {get:wdwnd}\n**video resolution:** {get:wdwnw}x{get:wdwnh}"
-        },
-        {
-          "type": 14,
-          "divider": true,
-          "spacing": 1
         },
         {
           "type": 12,

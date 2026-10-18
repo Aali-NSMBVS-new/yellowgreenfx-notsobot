@@ -442,7 +442,7 @@ audioputreplace # #1
 get wdwn width w
 hueshifthsv # 180 0.8
 waaw #
-tvsimulator # 0.65
+tvsimulator # 0.85
 cover # w #h
 copy # #1
 audiopitch #1 2**(-2.5/12)
@@ -712,7 +712,7 @@ audiopitch # 2**(7.47/12)
 copy # #r
 get wdwn width w
 hueshifthsv #r 180 0.8
-tvsimulator #r 0.65
+tvsimulator #r 0.85
 copy #r #1r
 audiopitch #1r 2**(-2.5/12)
 volume #1r 1.07

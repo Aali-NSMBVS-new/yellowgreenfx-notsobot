@@ -865,7 +865,8 @@ explode # 0.7
 explode # 0.8
 contrast # -1
 
-copy # #1copy #1 #2
+copy # #1
+copy #1 #2
 audiopitch #1 2**(2/12)
 audiopitch #2 2**(-3/12)
 audioputmix #1 #2
@@ -894,8 +895,8 @@ join m m3 true
 volume m 2
 resize m w h
 }}
-{if:{get:subcommand}|=||then:{set:iscript|
-ihtx m 10 0.4 {jsonify:{replace:#|with:mx|in:{get:code}}}
+{if:{get:subcommand}|=|ihtx|then:{set:iscript|
+ihtx m {arg:2} {arg:3} {jsonify:{replace:#|with:mx|in:{get:code}}}
 }}
 {if:{get:subcommand}|=||then:{set:iscript|
 {replace:#|with:m|in:{get:code}}

@@ -666,13 +666,7 @@ audioputreplace # #1
 get wdwn width w
 hueshifthsv # -47
 swirl # 102
-rotate # 90
-waves # 2.5*1 10 7
-waves # 2.5*3 30 7
-waves # 2.6*5 50 7
-waves # 2.7*7 70 7
-waves # 2.8*9 90 7
-rotate # 270
+tvsimulator # 0.475
 cover # w #h
 swirl # -102
 audiopitch # 2**(-7.47/12)
@@ -716,13 +710,7 @@ audioputreplace # #1
 get wdwn width w
 hueshifthsv # -47
 swirl # -102
-rotate # 90
-waves # 2.5*1 10 7
-waves # 2.5*3 30 7
-waves # 2.6*5 50 7
-waves # 2.7*7 70 7
-waves # 2.8*9 90 7
-rotate # 270
+tvsimulator # 0.475
 cover # w #h
 swirl # 102
 audiopitch # 2**(7.47/12)
@@ -730,15 +718,7 @@ audiopitch # 2**(7.47/12)
 copy # #r
 get wdwn width w
 hueshifthsv #r 180 0.8
-waaw #r
-rotate #r 90
-waves #r 1 10 3
-waves #r 3 30 3
-waves #r 5 50 3
-waves #r 7 70 3
-waves #r 9 90 3
-rotate #r 270
-cover #r w #h
+tvsimulator #r 0.65
 copy #r #1r
 audiopitch #1r 2**(-2.5/12)
 volume #1r 1.07
@@ -826,13 +806,7 @@ audiopitch #1 2**(4/12)
 audioputreplace # #1
 }}{if:{get:effect}|=|win12knowns g major 91|then:{set:code|
 get wdwn width w
-rotate # 90
-waves # 1 10 4.7
-waves # 3 30 4.3
-waves # 5 50 3.1
-waves # 7 70 5.2
-waves # 9 90 3.4
-rotate # 270
+tvsimulator # 0.65
 cover # w #h
 hueshifthsvffmpeg # 205 1.2
 copy # #1
@@ -844,13 +818,7 @@ volume #1 2
 audioputreplace # #1
 }}{if:{get:effect}|=|win12knowns g minor 91|then:{set:code|
 get wdwn width w
-rotate # 90
-waves # 1 10 4.7
-waves # 3 30 4.3
-waves # 5 50 3.1
-waves # 7 70 5.2
-waves # 9 90 3.4
-rotate # 270
+tvsimulator # 0.65
 cover # w #h
 hueshifthsvffmpeg # -205 0.8
 copy # #1
@@ -913,8 +881,8 @@ volume #1 2.3
 audioputreplace # #1
 }}
 
-{if:{get:subcommand}|=|raw|then:{python:import json
-print(json.dumps({"embeds":[{"author": {"name":"{usertag}","icon_url":"{avatar}"},"title": "raw code of {get:effect}","description": r"""{code:{get:code}}""","footer": {"text":"YellowGreenGMD's Effects","icon_url":"https://cdn.discordapp.com/attachments/1526319467011899464/1531441731537473657/1_3_1.png?ex=6a6939c1&is=6a67e841&hm=df4e709934ea4064f5b87e2c7eb4888476cf8f14fe4e222ffecbe6333d4017a0&"},"color": 0x3f8000}]}))}
+{if:{get:subcommand}|=|raw|then:{exit:{python:import json
+print(json.dumps({"embeds":[{"author": {"name":"{usertag}","icon_url":"{avatar}"},"title": "raw code of {get:effect}","description": r"""{code:{get:code}}""","footer": {"text":"YellowGreenGMD's Effects","icon_url":"https://cdn.discordapp.com/attachments/1526319467011899464/1531441731537473657/1_3_1.png?ex=6a6939c1&is=6a67e841&hm=df4e709934ea4064f5b87e2c7eb4888476cf8f14fe4e222ffecbe6333d4017a0&"},"color": 0x3f8000}]}))}}
 |else:
 {if:{get:subcommand}|=|2x2|then:{set:iscript|
 get wdwn width w
@@ -933,6 +901,9 @@ volume m3 2
 join m m3 true
 volume m 2
 resize m w h
+}}
+{if:{get:subcommand}|=||then:{set:iscript|
+ihtx m 10 0.4 {jsonify:{replace:#|with:mx|in:{get:code}}}
 }}
 {if:{get:subcommand}|=||then:{set:iscript|
 {replace:#|with:m|in:{get:code}}
